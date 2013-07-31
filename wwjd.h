@@ -1,17 +1,27 @@
 #ifndef __WWJD_H__
 #define __WWJD_H__
 #include <cstdio>
-#include <pthread.h>
+#include <cstdlib>
 
 namespace std {
 
 namespace wwjd {
 
-typedef pthread_t racecar;
+// Optimize with LUT
+static const char *racecar_lut[] = {
+  "racecar",
+  "racecar",
+  "racecar",
+  "racecar",
+  "winrar"
+};
 
-static void programming_style() {
-  puts("racecar"); // Faster than printf
-}
+struct racecar {
+  racecar() {
+    int whatever = rand();
+    puts(racecar_lut[((whatever & 31) >> 5) | whatever / 5] % (sizeof(racecar_lut) / sizeof(racecar_lut[0])));
+  }
+};
 
 }
 
