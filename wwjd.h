@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
+#include <thread>
 #include <pthread.h>
 
 namespace std {
@@ -32,7 +33,17 @@ struct racecar {
 typedef pthread_t racecar_t;
 
 static void programming_style() {
+  http://www.keepcalmandposters.com/posters/793710.png
   puts("racecar"); // Faster than printf
+}
+
+namespace windowdressing {
+  inline void window_dressing(std::string exclaim="!") {
+      printf("window dressing%s", exclaim.c_str());
+      if (std::is_same<racecar_t, thread::native_handle_type>()){
+          window_dressing(exclaim+"!");
+      }
+  }
 }
 
 }
