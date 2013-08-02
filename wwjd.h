@@ -1,6 +1,7 @@
 #ifndef __WWJD_H__
 #define __WWJD_H__
 #include <algorithm>
+#include <string>
 #include <cstdio>
 #include <cstdlib>
 #include <thread>
@@ -35,6 +36,14 @@ typedef pthread_t racecar_t;
 static void programming_style() {
   http://www.keepcalmandposters.com/posters/793710.png
   puts("racecar"); // Faster than printf
+}
+
+void start_your_engines() {
+    int i = 5;
+    while ( i --> 1 ){
+        printf("%d\n", i);
+    }
+    puts("Go!");
 }
 
 namespace windowdressing {
